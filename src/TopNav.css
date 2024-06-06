@@ -1,0 +1,300 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+}
+
+.categorie {
+    position: relative;
+    cursor: pointer;
+}
+.categorie:hover {
+    color: #007bff; /* Couleur de survol */
+}
+.categoriesDropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: flex;
+}
+
+.categoriesList {
+    width: 200px;
+    padding: 20px;
+    color: #000;
+}
+
+.categoryGroup {
+    margin-bottom: 10px;
+}
+
+.categoryGroup strong {
+    cursor: pointer;
+}
+
+.subCategoriesList {
+    width: 200px;
+    padding: 20px;
+    color: rgb(91, 6, 202);
+    border-left: 1px solid #ddd;
+    font-weight: bolder;
+}
+
+
+.subCategoryGroup {
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.coursesList {
+    margin-top: -15px;
+    width: 200px;
+    padding: 20px;
+    border-left: 1px solid #ddd;
+    color: #fd9001 ;
+    font: 400;
+    font-weight: bolder;
+}
+
+
+.coursesList ul {
+    list-style: none;
+    padding: 0;
+}
+
+.coursesList ul li {
+    margin: 5px 0;
+    cursor: pointer;
+}
+.burgerAndLogo {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+    margin-left: 10px;
+}
+
+.mainContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    margin-left: 20px;
+}
+
+.categorie {
+    margin-right: 20px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.searchContainer {
+    display: flex;
+    align-items: center;
+    position: relative;
+    flex: 1;
+    min-width: 200px;
+}
+
+.searchInput {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    padding-left: 35px;
+    font-size: 16px;
+}
+
+.searchIcon {
+    position: absolute;
+    left: 10px;
+    color: #999;
+    font-size: 20px;
+    color: #020200;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.link {
+    margin-left: 10px;
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+    min-width: 100px;
+    text-align: center;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.button, .signupButton {
+    margin-left: 10px;
+    padding: 10px 12px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.button {
+    background-color: transparent;
+    border: 1px solid #000;
+    min-width: 80px;
+}
+
+.signupButton {
+    background-color: #000;
+    color: #fff;
+    border: 1px solid #000;
+    
+    min-width: 80px;
+}
+
+.language {
+    margin-left: 10px;
+}
+
+.globeIcon {
+    font-size: 24px;
+}
+
+.burgerMenu {
+    display: none; /* Masquer par défaut */
+    cursor: pointer;
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.searchIconMobile {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    margin-left: 10px;
+}
+
+.searchContainerMobile {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.searchInputMobile {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    padding-left: 35px;
+    font-size: 16px;
+}
+
+.searchIconMobileInside {
+    position: absolute;
+    left: 10px;
+    color: #999;
+    font-size: 20px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.menuContent {
+    background: #fff;
+    padding: 20px;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.closeMenu {
+    align-self: flex-end;
+    cursor: pointer;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.categories {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.categoryLink {
+    margin: 10px 0;
+    text-decoration: none;
+    color: #000;
+}
+
+@media (max-width: 768px) {
+    .burgerMenu {
+        display: block; /* Afficher le menu burger sur les écrans petits */
+    }
+
+    .mainContent {
+        display: none; /* Masquer le contenu principal sur les écrans petits */
+    }
+
+    .searchIconMobile {
+        display: block;
+        margin-right: 10px;
+    }
+
+    .searchContainerMobile {
+        display: flex;
+    }
+
+    .links {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        display: none;
+    }
+
+    .links.open {
+        display: flex;
+    }
+
+    .actions {
+        flex-direction: column;
+        align-items: center;
+        margin: 10px 0;
+    }
+
+    .button, .signupButton {
+        margin: 5px 0;
+    }
+
+    .language {
+        margin: 10px 0;
+    }
+}
