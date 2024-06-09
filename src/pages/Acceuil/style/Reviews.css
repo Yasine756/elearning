@@ -86,3 +86,9 @@
         padding: 10px;
     }
 }
+.reviews-title{
+    font-size: 2em; /* Taille de police pour le titre */
+    margin-bottom: 20px;
+    color: #000000; /* Couleur harmonieuse avec votre plateforme */
+    font-weight: bold;
+}

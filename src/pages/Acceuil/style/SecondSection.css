@@ -1,0 +1,66 @@
+.second-section {
+    background-color: #f8f8f8; /* Couleur de fond douce */
+    padding: 50px 20px; /* Espacement interne pour aérer le contenu */
+    text-align: center; /* Centrer le texte */
+  }
+  
+  .second-section h2 {
+    font-size: 24px; /* Taille de la police pour le titre */
+    color: #333; /* Couleur du texte */
+    margin-bottom: 30px; /* Espacement sous le titre */
+  }
+  
+  .logo-container {
+    display: flex; /* Afficher les logos en ligne */
+    justify-content: center; /* Centrer les logos horizontalement */
+    align-items: center; /* Centrer les logos verticalement */
+    flex-wrap: wrap; /* Permettre aux logos de passer à la ligne si nécessaire */
+    gap: 20px; /* Espacement entre les logos */
+  }
+  
+  .logo {
+    max-width: 100px; /* Limite la largeur maximale des logos */
+    height: auto; /* Conserve les proportions des logos */
+    margin: 10px; /* Espacement autour des logos */
+    transition: transform 0.3s ease; /* Transition pour l'effet de survol */
+  }
+  
+  .logo:hover {
+    transform: scale(1.1); /* Agrandit légèrement le logo au survol */
+  }
+  
+  .claim-form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 400px;
+    margin: 0 auto 30px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .claim-form h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+  }
+  
+  .claim-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .claim-form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #e9e9e9;
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 20px;
+    cursor: not-allowed;
+  }
+  

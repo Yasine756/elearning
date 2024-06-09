@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaStar } from 'react-icons/fa';
 import { motion } from 'framer-motion';
-import './Reviews.css';
+import './style/Reviews.css';
 
 const reviews = [
   {
@@ -48,6 +48,8 @@ const fadeIn = (direction, delay) => {
 const Reviews = () => {
   return (
     <div className="reviews-container">
+        <hr/>
+        <h1 className="reviews-title">Les impressions d'usage entre les formateurs et les apprenants</h1>
       {reviews.map((review, index) => (
         <motion.div
           key={index}

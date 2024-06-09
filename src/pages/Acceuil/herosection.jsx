@@ -1,5 +1,5 @@
 import React from 'react';
-import './HeroPage.css'; // Assurez-vous que ce chemin est correct
+import './style/HeroPage.css'; // Assurez-vous que ce chemin est correct
 
 const HeroSection = () => {
     return (

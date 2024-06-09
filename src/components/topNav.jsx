@@ -1,18 +1,26 @@
-import React, { useState } from 'react';
-import { FiAlignJustify } from 'react-icons/fi';
-import { FaSearch } from 'react-icons/fa';
-import { CiCircleChevDown } from 'react-icons/ci';
-import { GrLanguage } from 'react-icons/gr';
-import categories from './categories.json'; // Importez votre fichier JSON
-import './TopNav.css';
+import React, { useState } from "react";
+import { FiAlignJustify } from "react-icons/fi";
+import { FaSearch } from "react-icons/fa";
+import { CiCircleChevDown } from "react-icons/ci";
+import { GrLanguage } from "react-icons/gr";
+import { BiSupport } from "react-icons/bi";
+import { GiTeacher } from "react-icons/gi";
+import categories from "../categories.json"; // Importez votre fichier JSON
+import "./style/TopNav.css";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const TopNav = ({ scrollToFormateur }) => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [categoriesOpen, setCategoriesOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [selectedSubCategory, setSelectedSubCategory] = useState(null);
-
+  const Home=()=>{
+    navigate('/')
+  }
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
@@ -34,18 +42,34 @@ const TopNav = ({ scrollToFormateur }) => {
     setSelectedSubCategory(subCategory);
   };
 
+  const handleSupportClick = () => {
+    navigate('/support');
+  };
+
+  const handleFormateurClick = () => {
+    if (location.pathname === '/') {
+      scrollToFormateur();
+    } else {
+      navigate('/devenirForm');
+    }
+  };
+
   return (
     <div className="navbar">
       <div className="burgerAndLogo">
         <div className="burgerMenu" onClick={toggleMenu}>
           <FiAlignJustify />
         </div>
-        <img src="logo.png" alt="Logo" className="logo" />
+        <div className="logo" onClick={Home}>
+          {"<E-lea"}
+          <span className="logo-highlight">rnin</span>
+          {"g/>"}
+        </div>
       </div>
       <div className="mainContent">
-        <div 
-          className="categorie" 
-          onMouseEnter={toggleCategories} 
+        <div
+          className="categorie"
+          onMouseEnter={toggleCategories}
           onMouseLeave={toggleCategories}
         >
           Categorie <CiCircleChevDown />
@@ -53,8 +77,8 @@ const TopNav = ({ scrollToFormateur }) => {
             <div className="categoriesDropdown">
               <div className="categoriesList">
                 {Object.keys(categories).map((category, index) => (
-                  <div 
-                    key={index} 
+                  <div
+                    key={index}
                     className="categoryGroup"
                     onMouseEnter={() => handleCategoryHover(category)}
                   >
@@ -64,25 +88,29 @@ const TopNav = ({ scrollToFormateur }) => {
               </div>
               {selectedCategory && (
                 <div className="subCategoriesList">
-                  {Object.keys(categories[selectedCategory]).map((subCategory, index) => (
-                    <div 
-                      key={index} 
-                      className="subCategoryGroup"
-                      id='sub'
-                      onMouseEnter={() => handleSubCategoryHover(subCategory)}
-                    >
-                      {subCategory}
-                    </div>
-                  ))}
+                  {Object.keys(categories[selectedCategory]).map(
+                    (subCategory, index) => (
+                      <div
+                        key={index}
+                        className="subCategoryGroup"
+                        id="sub"
+                        onMouseEnter={() => handleSubCategoryHover(subCategory)}
+                      >
+                        {subCategory}
+                      </div>
+                    )
+                  )}
                 </div>
               )}
               {selectedCategory && selectedSubCategory && (
                 <div className="coursesList">
                   <ul>
-                    {Array.isArray(categories[selectedCategory][selectedSubCategory]) && 
-                      categories[selectedCategory][selectedSubCategory].map((course, index) => (
-                        <li key={index}>{course}</li>
-                    ))}
+                    {Array.isArray(
+                      categories[selectedCategory][selectedSubCategory]
+                    ) &&
+                      categories[selectedCategory][selectedSubCategory].map(
+                        (course, index) => <li key={index}>{course}</li>
+                      )}
                   </ul>
                 </div>
               )}
@@ -94,15 +122,24 @@ const TopNav = ({ scrollToFormateur }) => {
           <input type="text" placeholder="Rechercher" className="searchInput" />
         </div>
       </div>
-      <div className={`links ${menuOpen ? 'open' : ''}`}>
-        <a href="/business" className="link">About</a>
-        <span onClick={scrollToFormateur} className="link">Devenir Formateur</span>
+      <div className={`links ${menuOpen ? "open" : ""}`}>
+        <div onClick={handleSupportClick}>
+          {" "}
+          <BiSupport style={{ marginRight: "10px" }} />
+          Support
+        </div>
+        <span onClick={handleFormateurClick} className="link" id="for">
+          <GiTeacher style={{ marginRight: "10px" }} />
+          Devenir Formateur
+        </span>
         <div className="actions">
           <button className="button">Se connecter</button>
           <button className="signupButton">S'inscrire</button>
         </div>
         <div className="language">
-          <span role="img" aria-label="globe" className="globeIcon"><GrLanguage /></span>
+          <span role="img" aria-label="globe" className="globeIcon">
+            <GrLanguage />
+          </span>
         </div>
       </div>
       <div className="searchIconMobile" onClick={toggleSearch}>
@@ -111,7 +148,11 @@ const TopNav = ({ scrollToFormateur }) => {
       {searchOpen && (
         <div className="searchContainerMobile">
           <FaSearch className="searchIconMobileInside" />
-          <input type="text" placeholder="Rechercher" className="searchInputMobile" />
+          <input
+            type="text"
+            placeholder="Rechercher"
+            className="searchInputMobile"
+          />
         </div>
       )}
     </div>

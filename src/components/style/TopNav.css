@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 .navbar {
     display: flex;
     align-items: center;
@@ -13,14 +14,15 @@
     cursor: pointer;
 }
 .categorie:hover {
-    color: #007bff; /* Couleur de survol */
+    color: #ca009e; /* Couleur de survol */
 }
 .categoriesDropdown {
     position: absolute;
     top: 100%;
+    margin-top: 7%;
     left: 0;
     background: #fff;
-    border: 1px solid #ddd;
+    border: 2px solid #ddd;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 1000;
     display: flex;
@@ -80,9 +82,8 @@
 }
 
 .logo {
-    width: 100px;
+    width:100%;
     height: auto;
-    margin-left: 10px;
 }
 
 .mainContent {
@@ -107,9 +108,43 @@
     flex: 1;
     min-width: 200px;
 }
+.logo {
+  text-decoration: none;
+  color: inherit;
+  font-weight: bolder;
+  margin-right: 5%;
+  display: inline-flex;
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+
+  font-style: normal;
+  align-items: center;
+}
+
+.logo-highlight {
+  text-decoration: underline;
+  text-decoration-thickness: 4px;
+  text-decoration-color: purple;
+}
+.logo {
+    text-decoration: none;
+    color: inherit;
+    font-weight: bolder;
+    margin-right: 5%;
+    white-space: nowrap; /* Empêche la division en plusieurs lignes */
+    display: inline-flex; /* Assure un affichage en ligne */
+    align-items: center; /* Aligne les éléments au centre */
+  }
+  
+  .logo-highlight {
+    text-decoration: underline;
+    text-decoration-thickness: 4px;
+    text-decoration-color: purple;
+  }
+  
 
 .searchInput {
-    width: 100%;
+    width: 85%;
     padding: 8px 10px;
     border-radius: 20px;
     border: 1px solid #ccc;
@@ -125,14 +160,20 @@
     color: #020200;
 }
 
-.links {
+.links , .link{
     display: flex;
     align-items: center;
     margin-left: auto;
+    color: #000;
+    font-size: 16px;
+    
+}
+Link{
+    color: #000;
 }
 
 .link {
-    margin-left: 10px;
+    margin-left: 50px;
     text-decoration: none;
     color: #000;
     font-size: 16px;
@@ -157,6 +198,7 @@
     background-color: transparent;
     border: 1px solid #000;
     min-width: 80px;
+    color: #000;
 }
 
 .signupButton {
@@ -266,7 +308,8 @@
 
     .searchIconMobile {
         display: block;
-        margin-right: 10px;
+        margin-right: 0;
+        margin-right: -40px;
     }
 
     .searchContainerMobile {
@@ -278,6 +321,8 @@
         align-items: center;
         width: 100%;
         display: none;
+        
+        
     }
 
     .links.open {

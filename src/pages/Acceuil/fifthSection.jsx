@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaStar } from 'react-icons/fa';
-import './fifthsection.css'
+import './style/fifthsection.css'
 const courses = {
   Développement: {
     'Développement Web': [
